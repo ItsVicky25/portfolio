@@ -1,0 +1,206 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for Light Mode */
+:root {
+  --primary-color: #6d28d9;
+  --primary-hover: #5b21b6;
+  --background-main: #f3f4f6;
+  --background-glass: rgba(255, 255, 255, 0.7);
+  --text-primary: #1f2937;
+  --text-secondary: #4b5563;
+  --card-border: rgba(255, 255, 255, 0.5);
+  --card-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --glass-gradient: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.4) 0%,
+    rgba(255, 255, 255, 0.2) 100%
+  );
+}
+
+/* CSS Variables for Dark Mode */
+[data-theme='dark'] {
+  --primary-color: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --background-main: #0f172a;
+  --background-glass: rgba(17, 25, 40, 0.7);
+  --text-primary: #f3f4f6;
+  --text-secondary: #d1d5db;
+  --card-border: rgba(255, 255, 255, 0.1);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+  --glass-gradient: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.05) 100%
+  );
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--background-main);
+  color: var(--text-primary);
+  transition: background-color 0.3s, color 0.3s;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(109, 40, 217, 0.1) 0%, transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(109, 40, 217, 0.1) 0%, transparent 40%);
+}
+
+/* Glassmorphism Components */
+.glass-card {
+  background: var(--background-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+  border-radius: 1rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.glass-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2); /* More transparency */
+    backdrop-filter: blur(14px); /* Increased blur effect */
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: var(--card-shadow), 0 10px 40px -10px var(--primary-color);
+  }
+  
+  .glass-nav {
+    background: rgba(17, 25, 40, 0.4); /* Darker but more transparent */
+    backdrop-filter: blur(12px); /* Slightly more blur */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--card-border);
+    
+    position: fixed; /* Keeps the navbar fixed */
+    top: 20px; /* Adjust this for vertical positioning */
+    left: 50%; /* Centers the navbar horizontally */
+    transform: translateX(-50%); /* Ensures perfect centering */
+    
+    width: 60%; /* Adjust width as needed */
+    max-width: 500px; /* Ensures it doesn’t stretch too much */
+    padding: 12px 30px; /* Gives some inner spacing */
+    border-radius: 50px; /* More rounded for capsule effect */
+    
+    display: flex;
+    justify-content: center; /* Centers text inside */
+    align-items: center; /* Vertically centers text */
+    text-align: center;
+}
+  
+.glass-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px; /* Spacing between nav items */
+}
+  
+.glass-nav ul li {
+    display: inline;
+}
+  
+.glass-nav ul li a {
+    text-decoration: none;
+    color: white; /* Adjust color as needed */
+    font-size: 16px;
+    font-weight: 500;
+    padding: 8px 15px;
+    transition: all 0.3s ease;
+}
+
+.glass-nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2); /* Light hover effect */
+    border-radius: 20px;
+}
+
+  
+/* Buttons */
+.btn-primary {
+  background: var(--primary-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  transition: all 0.3s;
+  background-image: var(--glass-gradient);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px var(--primary-color);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--primary-color);
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  border: 2px solid var(--primary-color);
+  transition: all 0.3s;
+}
+
+.btn-secondary:hover {
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px -10px var(--primary-color);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px; /* Slightly wider for a sleek look */
+}
+
+/* Scrollbar Track */
+::-webkit-scrollbar-track {
+  background: var(--background-main);
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+}
+
+/* Scrollbar Thumb */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-hover)); /* Gradient effect */
+  border-radius: 10px;
+  border: 2px solid var(--background-main); /* Adds spacing between thumb and track */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Soft glow effect */
+  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Scrollbar Thumb on Hover */
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, var(--primary-hover), var(--primary-color)); /* Reversed gradient */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* More glow on hover */
+  transform: scale(1.1); /* Slight expansion effect */
+}
+
+
+/* Form inputs */
+input, textarea {
+  background: var(--background-glass);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  border-radius: 0.5rem;
+}
+
+input:focus, textarea:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(109, 40, 217, 0.2);
+  outline: none;
+}
+
+/* Animations */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
