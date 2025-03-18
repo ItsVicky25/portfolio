@@ -69,7 +69,7 @@ Here are the **features** you can implement in your **free-hosted portfolio** wi
 ---
 
 ### 🚀 **Final Tech Stack (100% Free)**  
-✅ **Frontend:** Next.js + TailwindCSS (Hosted on Vercel)  
+✅ **Frontend:** Next.js + SCSS (Hosted on Vercel)  
 ✅ **Backend:** Cloudflare Workers (Serverless API)  
 ✅ **Database:** Firebase Firestore (For real-time updates)  
 ✅ **GitHub Integration:** GitHub Actions + GitHub API  
