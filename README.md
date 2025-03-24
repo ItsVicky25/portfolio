@@ -209,44 +209,7 @@ Use **React** for this section, ensuring the footer is sticky and always visible
 - **Interactive Elements** (buttons, forms) to make the portfolio engaging.
 - **Dark Mode Toggle** should be accessible from anywhere on the site (typically in the header).
 
-### Example Structure:
 
-```jsx
-// Header/Navbar component
-const Navbar = () => {
-  return (
-    <nav className="navbar fixed top-0 w-full p-4 flex justify-between items-center bg-opacity-70">
-      <div className="logo">MyPortfolio</div>
-      <div className="links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <button className="dark-mode-toggle">🌗</button>
-    </nav>
-  );
-};
-
-// Features Section with Grid Layout
-const Features = () => {
-  return (
-    <section id="features" className="features-container grid grid-cols-1 md:grid-cols-2 gap-6 p-6">
-      <div className="feature-card">
-        <h3>Real-Time GitHub Updates</h3>
-        <p>Showcase latest repositories, contributions, and more...</p>
-        <button>View on GitHub</button>
-      </div>
-      <div className="feature-card">
-        <h3>Kaggle Achievements</h3>
-        <p>Show off your Kaggle medals and ranking.</p>
-        <button>View Achievements</button>
-      </div>
-      {/* Add more features here */}
-    </section>
-  );
-};
-```
 
 ### Final Thoughts:
 - Keep the design minimalistic but engaging.
